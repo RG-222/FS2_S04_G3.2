@@ -27,7 +27,7 @@ function Nosotros() {
 
                 <Col md={5}>
                     <img
-                        src="/src/assets/img/50annios.png"
+                        src="/assets/img/50annios.png"
                         alt="Productos de Pastelería 1000 Sabores"
                         className="imagen-nosotros"
                     />

@@ -16,17 +16,40 @@ const categorias = [
     'Tortas Especiales'
 ];
 
+
 function cargarProductos() {
     const productosGuardados = localStorage.getItem('productos');
 
     if (productosGuardados !== null) {
         try {
-            return JSON.parse(productosGuardados);
-        } catch {
+            const productos = JSON.parse(productosGuardados);
+
+            // Actualiza las imágenes de los productos iniciales
+            // sin sobrescribir el resto de sus datos.
+            const productosActualizados = productos.map(producto => {
+                const productoInicial = productosIniciales.find(
+                    inicial => inicial.id === producto.id
+                );
+
+                if (!productoInicial) {
+                    return producto;
+                }
+
+                return {
+                    ...producto,
+                    imagen: productoInicial.imagen
+                };
+            });
+
             localStorage.setItem(
                 'productos',
-                JSON.stringify(productosIniciales)
+                JSON.stringify(productosActualizados)
             );
+
+            return productosActualizados;
+        } catch {
+            // Si los datos guardados están dañados,
+            // se recupera la lista inicial.
         }
     }
 
@@ -37,6 +60,7 @@ function cargarProductos() {
 
     return productosIniciales;
 }
+
 
 function AdminProductos() {
     const [productos, setProductos] = useState(cargarProductos);

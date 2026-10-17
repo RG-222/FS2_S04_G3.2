@@ -4,8 +4,8 @@ import TortaCuadradaVainilla from '../assets/img/TortaCuadradaVainilla.jpg';
 import TortaCircularFrutilla from '../assets/img/TortaCircularFrutilla.jpg';
 import TortaCircularManjar from '../assets/img/TortaCircularManjar.jpg';
 import MousseIndividual from '../assets/img/MousseIndividualchocolate.jpg';
-import TiramisuIndividual from '../assets/img/TiramisúIndividual.jpg';
-import TortaSinAzucarNaranja from '../assets/img/TortaSinAzúcarNaranja.jpg';
+import TiramisuIndividual from '../assets/img/TiramisuIndividual.jpg';
+import TortaSinAzucarNaranja from '../assets/img/TortaSinAzucarNaranja.jpg';
 import Cheesecake from '../assets/img/Cheesecake.jpg';
 import EmpanadaManzana from '../assets/img/EmpanadManzana.jpg';
 import TartaSantiago from '../assets/img/TartadeSantiago.jpg';
@@ -13,7 +13,7 @@ import Brownie from '../assets/img/Brownie.jpg';
 import PanSinGluten from '../assets/img/PanSinGluten.jpg';
 import TortaVeganaChocolate from '../assets/img/TortaVeganaChocolate.jpg';
 import GalletasVeganasAvena from '../assets/img/GalletasVeganasAvena.jpg';
-import TortaCumpleanos from '../assets/img/TortaCumpleaños.jpg';
+import TortaCumpleanos from '../assets/img/TortaCumpleanos.jpg';
 import TortaEspecialBoda from '../assets/img/TortaEspecialBoda.jpg';
 
 export const productosIniciales = [

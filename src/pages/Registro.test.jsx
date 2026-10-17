@@ -1,5 +1,6 @@
 
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';import { render, screen, fireEvent, cleanup } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import Registro from './Registro';
 
 describe('Formulario de registro', () => {

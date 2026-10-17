@@ -24,7 +24,7 @@ function Index() {
 
                 <Col md={6} className="text-center mt-4 mt-md-0">
                     <img
-                        src="/src/assets/img/50annios.png"
+                        src="/assets/img/50annios.png"
                         alt="Deliciosos pasteles de la pastelería"
                         className="imagen-inicio"
                     />
