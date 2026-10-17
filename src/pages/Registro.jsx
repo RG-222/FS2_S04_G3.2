@@ -132,8 +132,9 @@ function Registro() {
 
                         <Form id="datos" noValidate onSubmit={handleSubmit}>
                             <Form.Group className="mb-3">
-                                <Form.Label>Nombre:</Form.Label>
+                                <Form.Label htmlFor="nombre">Nombre:</Form.Label>
                                 <Form.Control
+                                    id="nombre"
                                     type="text"
                                     name="nombre"
                                     placeholder="Jane"
@@ -144,8 +145,9 @@ function Registro() {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Apellido:</Form.Label>
+                                <Form.Label htmlFor="apellido">Apellido:</Form.Label>
                                 <Form.Control
+                                    id="apellido"
                                     type="text"
                                     name="apellido"
                                     placeholder="Doe"
@@ -156,8 +158,9 @@ function Registro() {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Correo electrónico:</Form.Label>
+                                <Form.Label htmlFor="correo">Correo electrónico:</Form.Label>
                                 <Form.Control
+                                    id="correo"
                                     type="email"
                                     name="correo"
                                     placeholder="Jane.doe@email.com"
@@ -168,8 +171,9 @@ function Registro() {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Teléfono:</Form.Label>
+                                <Form.Label htmlFor="telefono">Teléfono:</Form.Label>
                                 <Form.Control
+                                    id="telefono"
                                     type="tel"
                                     name="telefono"
                                     placeholder="+569 12345678"
@@ -180,8 +184,9 @@ function Registro() {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Fecha de nacimiento:</Form.Label>
+                                <Form.Label htmlFor="fecha">Fecha de nacimiento:</Form.Label>
                                 <Form.Control
+                                    id="fecha"
                                     type="date"
                                     name="fecha"
                                     value={formulario.fecha}
@@ -190,8 +195,9 @@ function Registro() {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Contraseña:</Form.Label>
+                                <Form.Label htmlFor="contrasena">Contraseña:</Form.Label>
                                 <Form.Control
+                                    id="contrasena"
                                     type="password"
                                     name="contrasena"
                                     autoComplete="new-password"
@@ -201,8 +207,9 @@ function Registro() {
                             </Form.Group>
 
                             <Form.Group className="mb-4">
-                                <Form.Label>Confirmar contraseña:</Form.Label>
+                                <Form.Label htmlFor="confirmar">Confirmar contraseña:</Form.Label>
                                 <Form.Control
+                                    id="confirmar"
                                     type="password"
                                     name="confirmar"
                                     autoComplete="new-password"

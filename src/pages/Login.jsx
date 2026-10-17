@@ -79,11 +79,12 @@ function Login() {
 
                         <Form noValidate onSubmit={handleSubmit}>
                             <Form.Group className="mb-3">
-                                <Form.Label>
+                                <Form.Label htmlFor="correo">
                                     Correo electrónico:
                                 </Form.Label>
 
                                 <Form.Control
+                                    id="correo"
                                     type="email"
                                     name="correo"
                                     placeholder="correo@ejemplo.cl"
@@ -96,11 +97,12 @@ function Login() {
                             </Form.Group>
 
                             <Form.Group className="mb-4">
-                                <Form.Label>
+                                <Form.Label htmlFor="contrasena">
                                     Contraseña:
                                 </Form.Label>
 
                                 <Form.Control
+                                    id="contrasena"
                                     type="password"
                                     name="contrasena"
                                     autoComplete="current-password"
