@@ -2,7 +2,7 @@
 import { beforeEach, afterEach, describe, expect, it } from 'vitest';
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Productos from './Productos';
+import Productos from '../pages/Productos';
 
 describe('Página de productos', () => {
     beforeEach(() => {

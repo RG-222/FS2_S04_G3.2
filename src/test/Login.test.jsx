@@ -2,7 +2,7 @@
 import { beforeEach, afterEach, describe, expect, it } from 'vitest';
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Login from './Login';
+import Login from '../pages/Login';
 
 describe('Formulario de inicio de sesión', () => {
     beforeEach(() => {
