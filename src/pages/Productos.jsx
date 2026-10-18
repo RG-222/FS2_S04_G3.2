@@ -1,5 +1,6 @@
 
 import { productosIniciales } from '../data/productos';
+import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
@@ -79,29 +80,25 @@ function Productos() {
 
             <p className="text-center mt-3">Productos encontrados: {productosFiltrados.length}</p>
 
+            
             <Row className="g-4 mt-2">
                 {productosFiltrados.length > 0 ? (
                     productosFiltrados.map(function (producto) {
                         return (
                             <Col key={producto.id} xs={12} sm={6} lg={3}>
-                                <Card className="tarjeta-producto h-100">
-                                    <Card.Img variant="top" src={producto.imagen} alt={producto.nombre} className="imagen-tarjeta-producto" />
-                                    <Card.Body className="d-flex flex-column">
-                                        <Card.Title>{producto.nombre}</Card.Title>
-                                        <Card.Text>{producto.descripcion}</Card.Text>
-                                        <p className="precio-producto mt-auto">{formatoPrecio(producto.precio)}</p>
-                                        <Button as={Link} to={`/productos/${producto.id}`} variant="dark">Ver detalles</Button>
-                                    </Card.Body>
-                                </Card>
+                                <ProductCard producto={producto} />
                             </Col>
                         );
                     })
                 ) : (
                     <Col xs={12}>
-                        <div className="sin-resultados">No se encontraron productos que coincidan con tu búsqueda.</div>
+                        <div className="sin-resultados">
+                            No se encontraron productos que coincidan con tu búsqueda.
+                        </div>
                     </Col>
                 )}
             </Row>
+
         </Container>
     );
 }
