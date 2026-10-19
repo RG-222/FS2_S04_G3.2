@@ -1,4 +1,4 @@
-
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Container, Form, Button, Alert, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ function Login() {
     const [contrasena, setContrasena] = useState('');
     const [error, setError] = useState('');
     const [mensaje, setMensaje] = useState('');
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -23,23 +24,26 @@ function Login() {
         const usuarioEncontrado = usuarios.find(function (usuario) {
             return usuario.correo === correo.trim() && usuario.contrasena === contrasena;
         });
-
         if (!usuarioEncontrado) {
             setError('El correo o la contraseña son incorrectos.');
             return;
         }
-
-        localStorage.setItem('usuarioActivo', JSON.stringify({
+        const usuarioActivo = {
             nombre: usuarioEncontrado.nombre,
             apellido: usuarioEncontrado.apellido,
             correo: usuarioEncontrado.correo,
             tipo: usuarioEncontrado.tipo || 'cliente'
-        }));
-
-        setMensaje('¡Bienvenido/a, ' + usuarioEncontrado.nombre + '!');
+        };
+        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioActivo));
         setCorreo('');
         setContrasena('');
-    }
+        if (usuarioActivo.tipo === 'admin') {
+            navigate('/admin');
+        } else {
+            setMensaje('¡Bienvenido/a, ' + usuarioEncontrado.nombre + '!');
+            navigate('/');
+        }
+        }
 
     return (
         <Container className="mt-5 mb-5">
