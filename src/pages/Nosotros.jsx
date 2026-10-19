@@ -1,4 +1,3 @@
-
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 function Nosotros() {
@@ -7,17 +6,14 @@ function Nosotros() {
             <h1 className="titulo-productos text-center mb-4">
                 Sobre nosotros
             </h1>
-
             <Row className="align-items-center mb-5">
                 <Col md={7}>
                     <h2>50 años de tradición y dulzura</h2>
-
                     <p>
                         Pastelería 1000 Sabores celebra cinco décadas
                         ofreciendo productos de repostería para compartir
                         momentos especiales con familiares y amigos.
                     </p>
-
                     <p>
                         Nuestra propuesta busca combinar la tradición de
                         la repostería chilena con una experiencia de compra
@@ -33,7 +29,6 @@ function Nosotros() {
                     />
                 </Col>
             </Row>
-
             <Row>
                 <Col md={6} className="mb-3">
                     <Card className="h-100 tarjeta-producto">
@@ -47,7 +42,6 @@ function Nosotros() {
                         </Card.Body>
                     </Card>
                 </Col>
-
                 <Col md={6} className="mb-3">
                     <Card className="h-100 tarjeta-producto">
                         <Card.Body>
