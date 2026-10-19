@@ -1,4 +1,3 @@
-
 import { productosIniciales } from '../data/productos';
 import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
@@ -15,7 +14,6 @@ function cargarProductos() {
             localStorage.setItem('productos', JSON.stringify(productosIniciales));
         }
     }
-
     localStorage.setItem('productos', JSON.stringify(productosIniciales));
     return productosIniciales;
 }
@@ -37,11 +35,9 @@ function Productos() {
     } else if (orden === 'mayor') {
         productosFiltrados.sort(function (a, b) { return b.precio - a.precio; });
     }
-
     function formatoPrecio(precio) {
         return Number(precio).toLocaleString('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
     }
-
     return (
         <Container className="mt-5 mb-5">
             <h1 className="titulo-productos text-center mb-4">Nuestros productos</h1>
@@ -52,7 +48,6 @@ function Productos() {
                     <Form.Label>Buscar producto:</Form.Label>
                     <Form.Control type="text" placeholder="Ej. torta de chocolate" value={busqueda} onChange={function (event) { setBusqueda(event.target.value); }} />
                 </Form.Group>
-
                 <Form.Group className="campo-filtro">
                     <Form.Label>Categoría:</Form.Label>
                     <Form.Select value={categoria} onChange={function (event) { setCategoria(event.target.value); }}>
@@ -67,7 +62,6 @@ function Productos() {
                         <option value="Tortas Especiales">Tortas Especiales</option>
                     </Form.Select>
                 </Form.Group>
-
                 <Form.Group className="campo-filtro">
                     <Form.Label>Ordenar por precio:</Form.Label>
                     <Form.Select value={orden} onChange={function (event) { setOrden(event.target.value); }}>
@@ -79,7 +73,6 @@ function Productos() {
             </div>
 
             <p className="text-center mt-3">Productos encontrados: {productosFiltrados.length}</p>
-
             
             <Row className="g-4 mt-2">
                 {productosFiltrados.length > 0 ? (
@@ -98,7 +91,6 @@ function Productos() {
                     </Col>
                 )}
             </Row>
-
         </Container>
     );
 }
