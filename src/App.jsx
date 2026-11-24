@@ -1,5 +1,4 @@
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+﻿import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import AppNavbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,70 +17,71 @@ import AdminProductos from './pages/admin/AdminProductos';
 import AdminPromociones from './pages/admin/AdminPromociones';
 import AdminUsuarios from './pages/admin/AdminUsuarios';
 
+import { AuthProvider } from './context/AuthContext';
+
 function App() {
     return (
-        <BrowserRouter>
-            <AppNavbar />
+        <AuthProvider>
+            <BrowserRouter>
+                <AppNavbar />
 
-            <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/productos" element={<Productos />} />
-                <Route path="/nosotros" element={<Nosotros />} />
-                <Route path="/registro" element={<Registro />} />
-                <Route path="/login" element={<Login />} />
-                <Route
-                    path="/productos/:id"
-                    element={<DetalleProducto />}
-                />
+                <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/productos" element={<Productos />} />
+                    <Route path="/nosotros" element={<Nosotros />} />
+                    <Route path="/registro" element={<Registro />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/productos/:id" element={<DetalleProducto />} />
 
-                <Route
-                    path="/admin"
-                    element={
-                        <ProteccionAdmin>
-                            <AdminInicio />
-                        </ProteccionAdmin>
-                    }
-                />
+                    <Route
+                        path="/admin"
+                        element={
+                            <ProteccionAdmin>
+                                <AdminInicio />
+                            </ProteccionAdmin>
+                        }
+                    />
 
-                <Route
-                    path="/admin/pedidos"
-                    element={
-                        <ProteccionAdmin>
-                            <AdminPedidos />
-                        </ProteccionAdmin>
-                    }
-                />
+                    <Route
+                        path="/admin/pedidos"
+                        element={
+                            <ProteccionAdmin>
+                                <AdminPedidos />
+                            </ProteccionAdmin>
+                        }
+                    />
 
-                <Route
-                    path="/admin/productos"
-                    element={
-                        <ProteccionAdmin>
-                            <AdminProductos />
-                        </ProteccionAdmin>
-                    }
-                />
+                    <Route
+                        path="/admin/productos"
+                        element={
+                            <ProteccionAdmin>
+                                <AdminProductos />
+                            </ProteccionAdmin>
+                        }
+                    />
 
-                <Route
-                    path="/admin/promociones"
-                    element={
-                        <ProteccionAdmin>
-                            <AdminPromociones />
-                        </ProteccionAdmin>
-                    }
-                />
+                    <Route
+                        path="/admin/promociones"
+                        element={
+                            <ProteccionAdmin>
+                                <AdminPromociones />
+                            </ProteccionAdmin>
+                        }
+                    />
 
-                <Route
-                    path="/admin/usuarios"
-                    element={
-                        <ProteccionAdmin>
-                            <AdminUsuarios />
-                        </ProteccionAdmin>
-                    }
-                />
-            </Routes>
+                    <Route
+                        path="/admin/usuarios"
+                        element={
+                            <ProteccionAdmin>
+                                <AdminUsuarios />
+                            </ProteccionAdmin>
+                        }
+                    />
+                </Routes>
 
-            <Footer />
-        </BrowserRouter>
+                <Footer />
+            </BrowserRouter>
+        </AuthProvider>
     );
 }
 

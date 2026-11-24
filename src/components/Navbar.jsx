@@ -1,9 +1,20 @@
-
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+﻿import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
+import { useAuth } from '../context/AuthContext';
 
 function AppNavbar() {
+    const { usuario, logout } = useAuth();
+    const navigate = useNavigate();
+
+    async function handleLogout() {
+        try {
+            await logout();
+        } finally {
+            navigate('/');
+        }
+    }
+
     return (
         <Navbar className="navbar-pasteleria" expand="lg">
             <Container>
@@ -36,13 +47,31 @@ function AppNavbar() {
                             Nosotros |
                         </Nav.Link>
 
-                        <Nav.Link as={NavLink} to="/registro">
-                            Registro |
-                        </Nav.Link>
+                        {!usuario && (
+                            <>
+                                <Nav.Link as={NavLink} to="/registro">
+                                    Registro |
+                                </Nav.Link>
 
-                        <Nav.Link as={NavLink} to="/login">
-                            Iniciar sesión |
-                        </Nav.Link>
+                                <Nav.Link as={NavLink} to="/login">
+                                    Iniciar sesión |
+                                </Nav.Link>
+                            </>
+                        )}
+
+                        {usuario && (
+                            <>
+                                {usuario.tipo?.toLowerCase().includes('admin') && (
+                                    <Nav.Link as={NavLink} to="/admin">
+                                        Administración |
+                                    </Nav.Link>
+                                )}
+
+                                <Nav.Link onClick={handleLogout}>
+                                    Cerrar sesión |
+                                </Nav.Link>
+                            </>
+                        )}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
